@@ -14,41 +14,67 @@ class MatchDetailScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Stack(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xFFE5E5E5)),
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Icon(Icons.arrow_back_ios_sharp, size: 20),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
+            Stack(
+              children: [
+                Positioned.fill(
+                  child: Container(
+                    color: Colors.blue,
                     child: Center(
-                      child: Text(
-                        "Pertandingan",
-                        style: TextStyle(fontFamily: "FonceSans", fontSize: 16),
+                      child: Image.asset(
+                        scale: 4,
+                        "images/m6.png",
                       ),
                     ),
                   ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                ),
+                Positioned.fill(
+                  child: Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    color: Colors.black.withOpacity(0.4),
+                  ),
+                ),
+                Column(
                   children: [
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Stack(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: const Color(0xFFE5E5E5),
+                                ),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                Icons.arrow_back_ios_sharp,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Text(
+                                "Pertandingan",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: "FonceSans",
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -67,6 +93,7 @@ class MatchDetailScreen extends StatelessWidget {
                                 style: const TextStyle(
                                   fontFamily: "FonceSans",
                                   fontWeight: FontWeight.bold,
+                                  color: Colors.white,
                                   fontSize: 16,
                                 ),
                               )
@@ -82,6 +109,7 @@ class MatchDetailScreen extends StatelessWidget {
                                 style: const TextStyle(
                                   fontFamily: "NimbusSanL",
                                   fontWeight: FontWeight.bold,
+                                  color: Colors.white,
                                   fontSize: 16,
                                 ),
                               ),
@@ -89,6 +117,7 @@ class MatchDetailScreen extends StatelessWidget {
                                 match.date,
                                 style: const TextStyle(
                                   fontFamily: "FonceSans",
+                                  color: Colors.white,
                                   fontSize: 14,
                                 ),
                               ),
@@ -111,6 +140,7 @@ class MatchDetailScreen extends StatelessWidget {
                                 style: const TextStyle(
                                   fontFamily: "FonceSans",
                                   fontWeight: FontWeight.bold,
+                                  color: Colors.white,
                                   fontSize: 16,
                                 ),
                               )
@@ -120,9 +150,15 @@ class MatchDetailScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 24),
-                    ContentSection(match: match),
                   ],
                 ),
+              ],
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  ContentSection(match: match),
+                ],
               ),
             ),
           ],
@@ -163,7 +199,7 @@ class ContentSection extends StatelessWidget {
                     children: [
                       const Center(child: Text('Detail Screen')),
                       TeamSection(match: match),
-                      const Center(child: Text('Klasemen Screen')),
+                      StandingsSection(match: match),
                     ],
                   ),
                 )
