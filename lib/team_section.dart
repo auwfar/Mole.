@@ -28,23 +28,23 @@ class _TeamSectionState extends State<TeamSection> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const SizedBox(height: 4),
+          const SizedBox(height: 8),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 4),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(8), // Rounded corners
+              borderRadius: BorderRadius.circular(8),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05), // Very subtle shadow
-                  offset: const Offset(0, 2), // Slightly downward
-                  blurRadius: 6, // Smooth, soft blur
-                  spreadRadius: 0, // Minimal spread
+                  color: Colors.black.withOpacity(0.08),
+                  offset: const Offset(0, 3),
+                  blurRadius: 10,
+                  spreadRadius: 1,
                 ),
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.02), // Even lighter shadow for balance
-                  offset: const Offset(0, -1), // Slightly upward for a top shadow
-                  blurRadius: 4,
+                  color: Colors.black.withOpacity(0.04),
+                  offset: const Offset(0, -2),
+                  blurRadius: 6,
                   spreadRadius: 0,
                 ),
               ],
@@ -110,18 +110,18 @@ class TeamInfoSection extends StatelessWidget {
       margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(8), // Rounded corners
+        borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05), // Very subtle shadow
-            offset: const Offset(0, 2), // Slightly downward
-            blurRadius: 6, // Smooth, soft blur
-            spreadRadius: 0, // Minimal spread
+            color: Colors.black.withOpacity(0.08),
+            offset: const Offset(0, 3),
+            blurRadius: 10,
+            spreadRadius: 1,
           ),
           BoxShadow(
-            color: Colors.black.withOpacity(0.02), // Even lighter shadow for balance
-            offset: const Offset(0, -1), // Slightly upward for a top shadow
-            blurRadius: 4,
+            color: Colors.black.withOpacity(0.04),
+            offset: const Offset(0, -2),
+            blurRadius: 6,
             spreadRadius: 0,
           ),
         ],

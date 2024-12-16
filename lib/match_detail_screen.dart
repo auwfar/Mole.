@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mole/match_detail_section.dart';
 import 'package:mole/standings_section.dart';
 import 'package:mole/team_section.dart';
 import 'package:mole/model/match.dart';
@@ -195,7 +196,7 @@ class ContentSection extends StatelessWidget {
               Expanded(
                 child: TabBarView(
                   children: [
-                    const Center(child: Text('Detail Screen')),
+                    const MatchDetailSection(),
                     TeamSection(match: match),
                     StandingsSection(match: match),
                   ],

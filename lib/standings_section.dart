@@ -13,22 +13,23 @@ class StandingsSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          const SizedBox(height: 4),
           Container(
             margin: const EdgeInsets.all(4),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(8), // Rounded corners
+              borderRadius: BorderRadius.circular(8),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05), // Very subtle shadow
-                  offset: const Offset(0, 2), // Slightly downward
-                  blurRadius: 6, // Smooth, soft blur
-                  spreadRadius: 0, // Minimal spread
+                  color: Colors.black.withOpacity(0.08),
+                  offset: const Offset(0, 3),
+                  blurRadius: 10,
+                  spreadRadius: 1,
                 ),
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.02), // Even lighter shadow for balance
-                  offset: const Offset(0, -1), // Slightly upward for a top shadow
-                  blurRadius: 4,
+                  color: Colors.black.withOpacity(0.04),
+                  offset: const Offset(0, -2),
+                  blurRadius: 6,
                   spreadRadius: 0,
                 ),
               ],
@@ -36,7 +37,12 @@ class StandingsSection extends StatelessWidget {
             child: Column(
               children: [
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  padding: EdgeInsets.only(
+                    left: 16,
+                    right: 16,
+                    top: 12,
+                    bottom: 8,
+                  ),
                   child: Row(
                     children: [
                       Expanded(
@@ -109,7 +115,7 @@ class StandingsSection extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                       child: Container(
                         color: (item.team.name == match.team1.name ||
-                            item.team.name == match.team2.name)
+                                item.team.name == match.team2.name)
                             ? const Color(0xFFDFF6FF)
                             : Colors.white,
                         child: Padding(
@@ -122,7 +128,8 @@ class StandingsSection extends StatelessWidget {
                                 child: Text(
                                   "${index + 1}.",
                                   textAlign: TextAlign.start,
-                                  style: const TextStyle(fontFamily: "FonceSans"),
+                                  style:
+                                      const TextStyle(fontFamily: "FonceSans"),
                                 ),
                               ),
                               Expanded(
@@ -139,7 +146,8 @@ class StandingsSection extends StatelessWidget {
                                     Text(
                                       item.team.name,
                                       textAlign: TextAlign.start,
-                                      style: const TextStyle(fontFamily: "Coolvetica"),
+                                      style: const TextStyle(
+                                          fontFamily: "Coolvetica"),
                                     ),
                                   ],
                                 ),
@@ -149,7 +157,8 @@ class StandingsSection extends StatelessWidget {
                                 child: Text(
                                   "${item.matchWin} - ${item.matchLose}",
                                   textAlign: TextAlign.center,
-                                  style: const TextStyle(fontFamily: "FonceSans"),
+                                  style:
+                                      const TextStyle(fontFamily: "FonceSans"),
                                 ),
                               ),
                               Expanded(
@@ -157,7 +166,8 @@ class StandingsSection extends StatelessWidget {
                                 child: Text(
                                   "${item.gameWin} - ${item.gameLose}",
                                   textAlign: TextAlign.center,
-                                  style: const TextStyle(fontFamily: "FonceSans"),
+                                  style:
+                                      const TextStyle(fontFamily: "FonceSans"),
                                 ),
                               ),
                               Expanded(
@@ -165,7 +175,8 @@ class StandingsSection extends StatelessWidget {
                                 child: Text(
                                   (item.gameWin - item.gameLose).toString(),
                                   textAlign: TextAlign.center,
-                                  style: const TextStyle(fontFamily: "FonceSans"),
+                                  style:
+                                      const TextStyle(fontFamily: "FonceSans"),
                                 ),
                               ),
                               const SizedBox(width: 16),
