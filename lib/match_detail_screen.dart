@@ -22,7 +22,7 @@ class MatchDetailScreen extends StatelessWidget {
                     child: Center(
                       child: Image.asset(
                         scale: 4,
-                        "images/m6.png",
+                        match.competition.image,
                       ),
                     ),
                   ),
@@ -91,7 +91,7 @@ class MatchDetailScreen extends StatelessWidget {
                                 match.team1.name,
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
-                                  fontFamily: "FonceSans",
+                                  fontFamily: "Coolvetica",
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                   fontSize: 16,
@@ -138,7 +138,7 @@ class MatchDetailScreen extends StatelessWidget {
                                 match.team2.name,
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
-                                  fontFamily: "FonceSans",
+                                  fontFamily: "Coolvetica",
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                   fontSize: 16,

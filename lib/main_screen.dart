@@ -218,7 +218,7 @@ class _TodayMatchesState extends State<TodayMatches> {
                                     child: Text(
                                       match.team1.name,
                                       style: const TextStyle(
-                                        fontFamily: "FonceSans",
+                                        fontFamily: "Coolvetica",
                                         fontSize: 14,
                                       ),
                                     ),
@@ -247,7 +247,7 @@ class _TodayMatchesState extends State<TodayMatches> {
                                     child: Text(
                                       match.team2.name,
                                       style: const TextStyle(
-                                        fontFamily: "FonceSans",
+                                        fontFamily: "Coolvetica",
                                         fontSize: 14,
                                       ),
                                     ),

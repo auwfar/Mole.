@@ -1,5 +1,5 @@
-import 'package:mole/model/coach.dart';
-import 'package:mole/model/player.dart';
+import 'package:mole/model/competition.dart';
+
 import 'team.dart';
 
 class Match {
@@ -7,6 +7,7 @@ class Match {
   String time;
   Team team1;
   Team team2;
+  Competition competition;
   bool isNotified;
 
   Match({
@@ -14,6 +15,7 @@ class Match {
     required this.time,
     required this.team1,
     required this.team2,
+    required this.competition,
     required this.isNotified,
   });
 }
@@ -24,6 +26,7 @@ var matches = [
     time: "01:00 PM",
     team1: rrq,
     team2: onic,
+    competition: m6,
     isNotified: false,
   ),
 ];

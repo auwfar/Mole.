@@ -29,18 +29,21 @@ class StandingsSection extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 10,
-                  child: Text(
-                    'Tim',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "NimbusSanL",
+                  flex: 12,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 44),
+                    child: Text(
+                      'Tim',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "NimbusSanL",
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  flex: 4,
+                  flex: 6,
                   child: Text(
                     'Match',
                     textAlign: TextAlign.center,
@@ -51,7 +54,7 @@ class StandingsSection extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 4,
+                  flex: 6,
                   child: Text(
                     'Game',
                     textAlign: TextAlign.center,
@@ -62,7 +65,7 @@ class StandingsSection extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 2,
+                  flex: 3,
                   child: Text(
                     'Diff',
                     textAlign: TextAlign.center,
@@ -104,9 +107,10 @@ class StandingsSection extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          flex: 10,
+                          flex: 12,
                           child: Row(
                             children: [
+                              const SizedBox(width: 4),
                               Image.asset(
                                 item.team.image,
                                 width: 32,
@@ -116,13 +120,13 @@ class StandingsSection extends StatelessWidget {
                               Text(
                                 item.team.name,
                                 textAlign: TextAlign.start,
-                                style: const TextStyle(fontFamily: "FonceSans"),
+                                style: const TextStyle(fontFamily: "Coolvetica"),
                               ),
                             ],
                           ),
                         ),
                         Expanded(
-                          flex: 4,
+                          flex: 6,
                           child: Text(
                             "${item.matchWin} - ${item.matchLose}",
                             textAlign: TextAlign.center,
@@ -130,7 +134,7 @@ class StandingsSection extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          flex: 4,
+                          flex: 6,
                           child: Text(
                             "${item.gameWin} - ${item.gameLose}",
                             textAlign: TextAlign.center,
@@ -138,7 +142,7 @@ class StandingsSection extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          flex: 2,
+                          flex: 3,
                           child: Text(
                             (item.gameWin - item.gameLose).toString(),
                             textAlign: TextAlign.center,

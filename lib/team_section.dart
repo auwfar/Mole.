@@ -56,6 +56,7 @@ class _TeamSectionState extends State<TeamSection> {
                         style: const TextStyle(
                           fontSize: 14,
                           fontFamily: "NimbusSanL",
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     );
