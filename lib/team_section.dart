@@ -28,41 +28,63 @@ class _TeamSectionState extends State<TeamSection> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Pilih Tim',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: "FonceSans",
-                    fontWeight: FontWeight.bold,
-                  ),
+          const SizedBox(height: 4),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 4),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8), // Rounded corners
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05), // Very subtle shadow
+                  offset: const Offset(0, 2), // Slightly downward
+                  blurRadius: 6, // Smooth, soft blur
+                  spreadRadius: 0, // Minimal spread
                 ),
-                DropdownButton<Team>(
-                  value: selectedTeam,
-                  onChanged: (Team? newValue) {
-                    setState(() {
-                      selectedTeam = newValue!;
-                    });
-                  },
-                  items: teams.map<DropdownMenuItem<Team>>((Team value) {
-                    return DropdownMenuItem<Team>(
-                      value: value,
-                      child: Text(
-                        value.name,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontFamily: "NimbusSanL",
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    );
-                  }).toList(),
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.02), // Even lighter shadow for balance
+                  offset: const Offset(0, -1), // Slightly upward for a top shadow
+                  blurRadius: 4,
+                  spreadRadius: 0,
                 ),
               ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Pilih Tim',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: "FonceSans",
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  DropdownButton<Team>(
+                    value: selectedTeam,
+                    onChanged: (Team? newValue) {
+                      setState(() {
+                        selectedTeam = newValue!;
+                      });
+                    },
+                    items: teams.map<DropdownMenuItem<Team>>((Team value) {
+                      return DropdownMenuItem<Team>(
+                        value: value,
+                        child: Text(
+                          value.name,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontFamily: "NimbusSanL",
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ],
+              ),
             ),
           ),
           TeamInfoSection(team: selectedTeam)
@@ -84,7 +106,26 @@ class TeamInfoSection extends StatelessWidget {
     final Player junglerPlayer = team.players.firstWhere((player) => player.role == Role.jungler);
     final Player roamerPlayer = team.players.firstWhere((player) => player.role == Role.roamer);
 
-    return SingleChildScrollView(
+    return Container(
+      margin: const EdgeInsets.all(4),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8), // Rounded corners
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05), // Very subtle shadow
+            offset: const Offset(0, 2), // Slightly downward
+            blurRadius: 6, // Smooth, soft blur
+            spreadRadius: 0, // Minimal spread
+          ),
+          BoxShadow(
+            color: Colors.black.withOpacity(0.02), // Even lighter shadow for balance
+            offset: const Offset(0, -1), // Slightly upward for a top shadow
+            blurRadius: 4,
+            spreadRadius: 0,
+          ),
+        ],
+      ),
       child: Column(
         children: [
           LayoutBuilder(
@@ -96,22 +137,16 @@ class TeamInfoSection extends StatelessWidget {
               }
               return Stack(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: SizedBox(
-                      width: mapWidth,
-                      height: mapHeight,
-                      child: Card(
-                        elevation: 6,
-                        child: ClipRRect(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(12),
-                          ),
-                          child: Image.asset(
-                            "images/maps_ml.webp",
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                  SizedBox(
+                    width: mapWidth,
+                    height: mapHeight,
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(8),
+                      ),
+                      child: Image.asset(
+                        "images/maps_ml.webp",
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
@@ -435,7 +470,7 @@ class TeamInfoSection extends StatelessWidget {
             },
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+            padding: const EdgeInsets.all(8),
             child: Row(
               children: [
                 Container(

@@ -59,12 +59,12 @@ class MatchDetailScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const Padding(
-                            padding: EdgeInsets.all(8.0),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
                             child: Center(
                               child: Text(
-                                "Pertandingan",
-                                style: TextStyle(
+                                match.competition.name,
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontFamily: "FonceSans",
                                   fontSize: 16,
