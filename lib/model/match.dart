@@ -25,8 +25,8 @@ var matches = [
     date: "Besok",
     time: "01:00 PM",
     team1: rrq,
-    team2: onic,
-    competition: m6,
+    team2: tlid,
+    competition: mpl,
     isNotified: false,
   ),
 ];

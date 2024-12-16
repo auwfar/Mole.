@@ -43,7 +43,7 @@ class StandingsSection extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 6,
+                  flex: 4,
                   child: Text(
                     'Match',
                     textAlign: TextAlign.center,
@@ -54,7 +54,7 @@ class StandingsSection extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 6,
+                  flex: 4,
                   child: Text(
                     'Game',
                     textAlign: TextAlign.center,
@@ -65,7 +65,7 @@ class StandingsSection extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 2,
                   child: Text(
                     'Diff',
                     textAlign: TextAlign.center,
@@ -126,7 +126,7 @@ class StandingsSection extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          flex: 6,
+                          flex: 4,
                           child: Text(
                             "${item.matchWin} - ${item.matchLose}",
                             textAlign: TextAlign.center,
@@ -134,7 +134,7 @@ class StandingsSection extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          flex: 6,
+                          flex: 4,
                           child: Text(
                             "${item.gameWin} - ${item.gameLose}",
                             textAlign: TextAlign.center,
@@ -142,7 +142,7 @@ class StandingsSection extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          flex: 3,
+                          flex: 2,
                           child: Text(
                             (item.gameWin - item.gameLose).toString(),
                             textAlign: TextAlign.center,

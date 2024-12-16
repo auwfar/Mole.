@@ -333,7 +333,7 @@ class TeamInfoSection extends StatelessWidget {
                             child: CircleAvatar(
                               radius: scalableValue(20),
                               backgroundImage: AssetImage(
-                                midLanePlayer.image ?? "",
+                                midLanePlayer.image,
                               ),
                             ),
                           ),

@@ -21,7 +21,7 @@ class MatchDetailScreen extends StatelessWidget {
                     color: Colors.blue,
                     child: Center(
                       child: Image.asset(
-                        scale: 4,
+                        scale: 7,
                         match.competition.image,
                       ),
                     ),
@@ -176,35 +176,32 @@ class ContentSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ClipRRect(
-        borderRadius: const BorderRadius.all(Radius.circular(12)),
-        child: Container(
-          color: Colors.white,
-          child: DefaultTabController(
-            length: 3,
-            child: Column(
-              children: [
-                const TabBar(
-                  labelColor: Colors.blue,
-                  unselectedLabelColor: Colors.black,
-                  indicatorColor: Colors.blue,
-                  tabs: [
-                    Tab(text: 'Detail'),
-                    Tab(text: 'Tim'),
-                    Tab(text: 'Klasemen')
+      child: Container(
+        color: Colors.white,
+        child: DefaultTabController(
+          length: 3,
+          child: Column(
+            children: [
+              const TabBar(
+                labelColor: Colors.blue,
+                unselectedLabelColor: Colors.black,
+                indicatorColor: Colors.blue,
+                tabs: [
+                  Tab(text: 'Detail'),
+                  Tab(text: 'Tim'),
+                  Tab(text: 'Klasemen')
+                ],
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    const Center(child: Text('Detail Screen')),
+                    TeamSection(match: match),
+                    StandingsSection(match: match),
                   ],
                 ),
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      const Center(child: Text('Detail Screen')),
-                      TeamSection(match: match),
-                      StandingsSection(match: match),
-                    ],
-                  ),
-                )
-              ],
-            ),
+              )
+            ],
           ),
         ),
       ),
