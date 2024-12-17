@@ -47,51 +47,36 @@ class MatchDetailSection extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  ListView.builder(
+                  ListView.separated(
                     shrinkWrap: true,
                     itemCount: match.channels.length,
+                    separatorBuilder: (context, index) => const SizedBox(height: 8),
                     itemBuilder: (context, index) {
                       var channel = match.channels[index];
                       return Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(
-                            channel.name,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontFamily: "NimbusSanL",
+                          ClipRRect(
+                            borderRadius: const BorderRadius.all(Radius.circular(4)),
+                            child: Container(
+                              color: Colors.red,
+                              child: const Icon(
+                                Icons.play_arrow_rounded,
+                                size: 18,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.red,
-                              elevation: 0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
+                          const SizedBox(width: 8),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4),
+                            child: Text(
+                              channel.name,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                fontFamily: "NimbusSanL",
                               ),
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                              ),
-                            ),
-                            child: const Row(
-                              children: [
-                                Icon(
-                                  Icons.play_arrow_rounded,
-                                  color: Color(0xFFF3F4F5),
-                                  size: 18,
-                                ),
-                                SizedBox(width: 2),
-                                Text(
-                                  "Watch",
-                                  style: TextStyle(
-                                    color: Color(0xFFF3F4F5),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    fontFamily: "FonceSans",
-                                  ),
-                                ),
-                              ],
                             ),
                           ),
                         ],
