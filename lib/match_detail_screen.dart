@@ -17,24 +17,6 @@ class MatchDetailScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Positioned.fill(
-                  child: Container(
-                    color: Colors.blue,
-                    child: Center(
-                      child: Image.asset(
-                        scale: 7,
-                        match.competition.image,
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned.fill(
-                  child: Container(
-                    width: double.infinity,
-                    height: double.infinity,
-                    color: Colors.black.withOpacity(0.4),
-                  ),
-                ),
                 Column(
                   children: [
                     Padding(
@@ -55,22 +37,29 @@ class MatchDetailScreen extends StatelessWidget {
                               ),
                               child: const Icon(
                                 Icons.arrow_back_ios_sharp,
-                                color: Colors.white,
                                 size: 20,
                               ),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                              child: Text(
-                                match.competition.name,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: "FonceSans",
-                                  fontSize: 16,
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  match.competition.image,
+                                  width: 38
                                 ),
-                              ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  match.competition.name,
+                                  style: const TextStyle(
+                                    fontFamily: "FonceSans",
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
@@ -93,8 +82,6 @@ class MatchDetailScreen extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                   fontFamily: "Coolvetica",
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
                                   fontSize: 16,
                                 ),
                               )
@@ -110,15 +97,13 @@ class MatchDetailScreen extends StatelessWidget {
                                 style: const TextStyle(
                                   fontFamily: "NimbusSanL",
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white,
                                   fontSize: 16,
                                 ),
                               ),
                               Text(
-                                match.date,
+                                match.dateLabel,
                                 style: const TextStyle(
                                   fontFamily: "FonceSans",
-                                  color: Colors.white,
                                   fontSize: 14,
                                 ),
                               ),
@@ -140,8 +125,6 @@ class MatchDetailScreen extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                   fontFamily: "Coolvetica",
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
                                   fontSize: 16,
                                 ),
                               )
@@ -196,7 +179,7 @@ class ContentSection extends StatelessWidget {
               Expanded(
                 child: TabBarView(
                   children: [
-                    const MatchDetailSection(),
+                    MatchDetailSection(match: match),
                     TeamSection(match: match),
                     StandingsSection(match: match),
                   ],
