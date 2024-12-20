@@ -116,7 +116,7 @@ class MatchDetailSection extends StatelessWidget {
                     children: [
                       const Icon(
                         Icons.calendar_month_rounded,
-                        size: 24,
+                        size: 20,
                       ),
                       const SizedBox(width: 8),
                       Column(

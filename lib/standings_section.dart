@@ -128,8 +128,9 @@ class StandingsSection extends StatelessWidget {
                                 child: Text(
                                   "${index + 1}.",
                                   textAlign: TextAlign.start,
-                                  style:
-                                      const TextStyle(fontFamily: "FonceSans"),
+                                  style: const TextStyle(
+                                    fontFamily: "FonceSans",
+                                  ),
                                 ),
                               ),
                               Expanded(
@@ -143,11 +144,14 @@ class StandingsSection extends StatelessWidget {
                                       height: 32,
                                     ),
                                     const SizedBox(width: 8),
-                                    Text(
-                                      item.team.name,
-                                      textAlign: TextAlign.start,
-                                      style: const TextStyle(
-                                          fontFamily: "Coolvetica"),
+                                    Flexible(
+                                      child: Text(
+                                        item.team.name,
+                                        textAlign: TextAlign.start,
+                                        style: const TextStyle(
+                                          fontFamily: "Coolvetica",
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -157,8 +161,9 @@ class StandingsSection extends StatelessWidget {
                                 child: Text(
                                   "${item.matchWin} - ${item.matchLose}",
                                   textAlign: TextAlign.center,
-                                  style:
-                                      const TextStyle(fontFamily: "FonceSans"),
+                                  style: const TextStyle(
+                                    fontFamily: "FonceSans",
+                                  ),
                                 ),
                               ),
                               Expanded(
@@ -166,8 +171,9 @@ class StandingsSection extends StatelessWidget {
                                 child: Text(
                                   "${item.gameWin} - ${item.gameLose}",
                                   textAlign: TextAlign.center,
-                                  style:
-                                      const TextStyle(fontFamily: "FonceSans"),
+                                  style: const TextStyle(
+                                    fontFamily: "FonceSans",
+                                  ),
                                 ),
                               ),
                               Expanded(
@@ -175,8 +181,9 @@ class StandingsSection extends StatelessWidget {
                                 child: Text(
                                   (item.gameWin - item.gameLose).toString(),
                                   textAlign: TextAlign.center,
-                                  style:
-                                      const TextStyle(fontFamily: "FonceSans"),
+                                  style: const TextStyle(
+                                    fontFamily: "FonceSans",
+                                  ),
                                 ),
                               ),
                               const SizedBox(width: 16),

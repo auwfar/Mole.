@@ -83,7 +83,7 @@ class _CompetitionListState extends State<CompetitionList> {
                 width: 160,
                 child: Card(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   color: (isSelected) ? Colors.blue : Colors.white,
                   child: Padding(
@@ -161,7 +161,7 @@ class _TodayMatchesState extends State<TodayMatches> {
           ),
           Card(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(8),
             ),
             color: Colors.white,
             child: Padding(
@@ -188,8 +188,8 @@ class _TodayMatchesState extends State<TodayMatches> {
                         Text(
                           match.time,
                           style: const TextStyle(
-                            fontFamily: "FonceSans",
-                            fontSize: 16,
+                            fontFamily: "NimbusSanL",
+                            fontSize: 14,
                           ),
                         ),
                         const SizedBox(width: 16),
@@ -269,7 +269,7 @@ class _TodayMatchesState extends State<TodayMatches> {
                                 : const Color(0xFFF3F4F5),
                             elevation: 0,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(8),
                             ),
                             padding: const EdgeInsets.symmetric(
                               horizontal: 12,
@@ -343,7 +343,7 @@ class TrendingNews extends StatelessWidget {
                   },
                   child: Card(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     color: Colors.white,
                     child: Container(
@@ -354,11 +354,11 @@ class TrendingNews extends StatelessWidget {
                         children: [
                           Card(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(8),
                             ),
                             color: Colors.white,
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(8),
                               child: Image.network(
                                 newsItem.image,
                                 width: double.infinity,

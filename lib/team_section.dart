@@ -87,6 +87,7 @@ class _TeamSectionState extends State<TeamSection> {
               ),
             ),
           ),
+          const SizedBox(height: 4),
           TeamInfoSection(team: selectedTeam)
         ],
       ),
@@ -128,6 +129,44 @@ class TeamInfoSection extends StatelessWidget {
       ),
       child: Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: Row(
+              children: [
+                Container(
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                  ),
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage(
+                      team.coach.image,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      team.coach.name,
+                      textAlign: TextAlign.start,
+                      style: const TextStyle(
+                          fontFamily: "FonceSans",
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const Text(
+                      "Coach",
+                      style: TextStyle(
+                        fontFamily: "FonceSans",
+                        fontSize: 12,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
           LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
               final mapWidth = constraints.maxWidth;
@@ -469,44 +508,6 @@ class TeamInfoSection extends StatelessWidget {
               );
             },
           ),
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: Row(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                  ),
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage(
-                      team.coach.image,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 8),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      team.coach.name,
-                      textAlign: TextAlign.start,
-                      style: const TextStyle(
-                          fontFamily: "FonceSans",
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const Text(
-                      "Coach",
-                      style: TextStyle(
-                        fontFamily: "FonceSans",
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          )
         ],
       ),
     );
